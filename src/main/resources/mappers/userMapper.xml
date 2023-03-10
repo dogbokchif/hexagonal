@@ -1,0 +1,48 @@
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.hexagonal.adapter.out.persistence.user.UserEntity">
+
+    <resultMap type="com.example.hexagonal.adapter.out.persistence.user.UserEntity" id="result">
+        <result property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="coin" column="coin" />
+    </resultMap>
+
+    <sql id="sql_select">
+        SELECT
+            a.id
+             , a.name
+             , a.coin
+    </sql>
+
+    <update  id="save">
+        UPDATE user
+        SET name = #{name}, coin = #{coin}
+        WHERE a.id = #{id}
+    </update>
+
+    <select id="load" resultMap="result">
+        <include refid="sql_select"></include>
+        FROM user AS a
+        WHERE a.id = #{id}
+    </select>
+
+    <insert id="register" parameterType="com.example.hexagonal.adapter.out.persistence.user.UserEntity"
+            keyProperty="id">
+        INSERT INTO user
+        (
+            id
+            , name
+            , coin
+        )
+        VALUES
+            (
+            #{id}
+            , #{main}
+            , #{coin}
+            )
+    </insert>
+
+</mapper>
