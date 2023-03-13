@@ -2,9 +2,7 @@ package com.example.hexagonal.adapter.out.persistence.user;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
-
 @Mapper
-@Repository
 public interface UserMapper {
     /**
      * 유저 불러오기

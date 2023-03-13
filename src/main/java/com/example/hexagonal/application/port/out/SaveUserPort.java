@@ -1,8 +1,9 @@
 package com.example.hexagonal.application.port.out;
 
+import com.example.hexagonal.adapter.out.persistence.user.UserEntity;
 import com.example.hexagonal.domain.User;
 
 public interface SaveUserPort {
-    User save(User user);
-    User register(User user);
+    void save(User user);
+    void register(User user);
 }

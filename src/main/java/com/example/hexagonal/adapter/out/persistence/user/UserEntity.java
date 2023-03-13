@@ -14,14 +14,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Nonnull
     @Column(columnDefinition = "VARCHAR(40) NOT NULL")
     private String name;
-    @Nonnull
     @Column(columnDefinition = "INT(11) NOT NULL")
     private Long coin;
 }
