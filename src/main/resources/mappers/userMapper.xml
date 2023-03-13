@@ -17,7 +17,7 @@
              , a.coin
     </sql>
 
-    <update  id="save">
+    <update id="save">
         UPDATE user
         SET name = #{name}, coin = #{coin}
         WHERE a.id = #{id}
@@ -29,20 +29,18 @@
         WHERE a.id = #{id}
     </select>
 
-    <insert id="register" parameterType="com.example.hexagonal.adapter.out.persistence.user.UserEntity"
+    <insert id="register" parameterType="com.example.hexagonal.adapter.out.persistence.user.UserEntity" useGeneratedKeys="true"
             keyProperty="id">
         INSERT INTO user
         (
-            id
-            , name
+            name
             , coin
         )
         VALUES
-            (
-            #{id}
-            , #{main}
+        (
+            #{name}
             , #{coin}
-            )
+        )
     </insert>
 
 </mapper>

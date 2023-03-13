@@ -1,5 +1,6 @@
 package com.example.hexagonal.application.service;
 
+import com.example.hexagonal.adapter.out.persistence.user.UserEntity;
 import com.example.hexagonal.application.port.in.CoinUpPort;
 import com.example.hexagonal.application.port.in.RegisterPort;
 import com.example.hexagonal.application.port.in.RenamePort;
